@@ -1,0 +1,34 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>📶 Handytarife, 5G-Internet & Router Österreich</title><link rel="stylesheet" href="assets/style.css"></head>
+<body><header><h1><svg class="i"><use href="#signal"/></svg> Tarif-Vergleich Österreich</h1>
+<p class="sub">Handytarife · 5G-Internet/Cube · 5G-Router — Stand Recherche 12.10.2026 · Preise ohne Gewähr, ❓ = ungeprüft</p>
+<nav id="tabs"><button data-tab="handy" class="on"><svg class="i"><use href="#phone"/></svg> Handytarife <b id="c-handy"></b></button><button data-tab="internet"><svg class="i"><use href="#wifi"/></svg> 5G-Internet <b id="c-internet"></b></button><button data-tab="router"><svg class="i"><use href="#router"/></svg> Router <b id="c-router"></b></button></nav></header>
+<main>
+<section id="filters">
+ <div class="row"><label class="search"><svg class="i"><use href="#search"/></svg><input id="q" placeholder="Suche: Tarif, Anbieter, Gerät…"></label>
+ <select id="sort"></select><button id="reset" title="Filter zurücksetzen"><svg class="i"><use href="#x"/></svg></button></div>
+ <div class="row tf" id="netz"></div>
+ <div class="row tf"><select id="anb"><option value="">Alle Anbieter</option></select>
+  <label class="chk"><input type="checkbox" id="f-unl"> ♾️ unlimitiert</label><label class="chk"><input type="checkbox" id="f-nob"> 🔓 ohne Bindung</label>
+  <label class="chk"><input type="checkbox" id="f-biz"> 🏢 Business</label><label class="chk"><input type="checkbox" id="f-5g"> 5G</label></div>
+ <div class="row tf"><label class="rng"><span>💶 max. <output id="o-p"></output> €</span><input type="range" id="f-p" min="0" max="110" step="1" value="110"></label>
+ <label class="rng"><span>⬇️ min. <output id="o-s"></output> Mbit/s</span><input type="range" id="f-s" min="0" max="1000" step="50" value="0"></label></div>
+ <div class="row rf"><label class="rng"><span>💶 max. <output id="o-rp"></output> €</span><input type="range" id="f-rp" min="0" max="600" step="10" value="600"></label></div>
+</section>
+<p id="count"></p><div id="list"></div>
+<section id="credits"><h2><svg class="i"><use href="#img"/></svg> Bildquellen & Hinweise</h2><ul id="cred"></ul>
+<p>Logos/Marken gehören den jeweiligen Inhabern; nur zur Kennzeichnung. Ohne Bild → Initialen-Badge. Daten aus eigener Recherche (tarife.at, Anbieterseiten); Privattarife: geteilte/wechselnde IP, bei Drei Routerbetrieb lt. AGB nicht erlaubt.</p></section>
+</main>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+<symbol id="signal" viewBox="0 0 24 24"><path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16"/></symbol>
+<symbol id="phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></symbol>
+<symbol id="wifi" viewBox="0 0 24 24"><path d="M12 20h.01M2 8.8a15 15 0 0 1 20 0M5 12.9a10 10 0 0 1 14 0M8.5 16.4a5 5 0 0 1 7 0"/></symbol>
+<symbol id="router" viewBox="0 0 24 24"><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6.01 18H6M10.01 18H10M15 10v4M17.84 7.17a4 4 0 0 0-5.66 0M20.66 4.34a8 8 0 0 0-11.31 0"/></symbol>
+<symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+<symbol id="img" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+<symbol id="down" viewBox="0 0 24 24"><path d="M12 5v14M19 12l-7 7-7-7"/></symbol>
+<symbol id="up" viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
+<symbol id="link" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+</svg>
+<script src="assets/app.js"></script></body></html>
