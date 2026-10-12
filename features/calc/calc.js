@@ -355,7 +355,7 @@
   <footer class="tc-src">
     <strong>Quellen (nicht erfunden)</strong>
     <ul>
-      <li>tarife-at <code>assets/data.json</code> — 65 Tarife, 16 Router</li>
+      <li>tarife-at <code>assets/data.json</code> — 529 Tarife, 181 Router (tarife.at + Geizhals)</li>
       <li><code>5g-vergleich-bandgasse13.md</code> — connect 2026, nPerf 2026, Kabel-Latenz</li>
       <li><code>multi-5g-ip-kostenmodell.md</code> — P/L-Index, Aufpreis-Leiter, Szenarien A/B, Router-Abschreibung</li>
       <li><code>feste-ips-at.md</code> — feste IP nur Business / Option</li>
