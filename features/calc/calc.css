@@ -1,0 +1,166 @@
+/* TarifeCalc – Kostenrechner & Preis-Leistungs-Index */
+:root, .tc-root {
+  --tc-bg: #0f1218;
+  --tc-panel: #171b24;
+  --tc-panel2: #1e2430;
+  --tc-border: #2a3344;
+  --tc-text: #e8edf5;
+  --tc-muted: #8b97ab;
+  --tc-accent: #6c5ce7;
+  --tc-accent2: #00a8a8;
+  --tc-good: #00b894;
+  --tc-ok: #fdcb6e;
+  --tc-bad: #e17055;
+  --tc-a1: #da291c;
+  --tc-magenta: #e20074;
+  --tc-drei: #ff6600;
+  --tc-radius: 12px;
+  --tc-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.tc-root {
+  font-family: var(--tc-font);
+  color: var(--tc-text);
+  background: var(--tc-bg);
+  line-height: 1.45;
+  box-sizing: border-box;
+}
+.tc-root *, .tc-root *::before, .tc-root *::after { box-sizing: border-box; }
+.tc-wrap { max-width: 1200px; margin: 0 auto; padding: 1rem 1.25rem 2.5rem; }
+.tc-head { margin-bottom: 1.25rem; }
+.tc-head h2 { margin: 0 0 .35rem; font-size: 1.45rem; font-weight: 700; letter-spacing: -.02em; }
+.tc-head p { margin: 0; color: var(--tc-muted); font-size: .9rem; }
+.tc-grid { display: grid; gap: 1rem; }
+@media (min-width: 900px) {
+  .tc-grid-2 { grid-template-columns: 1fr 1fr; }
+  .tc-grid-3 { grid-template-columns: 1.1fr 1fr 1fr; }
+}
+.tc-card {
+  background: var(--tc-panel);
+  border: 1px solid var(--tc-border);
+  border-radius: var(--tc-radius);
+  padding: 1rem 1.1rem 1.15rem;
+}
+.tc-card h3 {
+  margin: 0 0 .75rem;
+  font-size: 1rem;
+  font-weight: 650;
+  display: flex; align-items: center; gap: .45rem;
+}
+.tc-card h3 .tc-ico { opacity: .9; }
+.tc-note {
+  font-size: .78rem;
+  color: var(--tc-muted);
+  margin: .6rem 0 0;
+}
+.tc-note code { background: var(--tc-panel2); padding: .1rem .3rem; border-radius: 4px; font-size: .75rem; }
+.tc-controls { display: grid; gap: .75rem; }
+.tc-field { display: grid; gap: .3rem; }
+.tc-field label { font-size: .8rem; color: var(--tc-muted); font-weight: 550; }
+.tc-field select, .tc-field input[type="number"] {
+  width: 100%;
+  background: var(--tc-panel2);
+  border: 1px solid var(--tc-border);
+  color: var(--tc-text);
+  border-radius: 8px;
+  padding: .55rem .7rem;
+  font: inherit;
+  font-size: .92rem;
+}
+.tc-field select:focus, .tc-field input:focus {
+  outline: 2px solid color-mix(in srgb, var(--tc-accent) 55%, transparent);
+  border-color: var(--tc-accent);
+}
+.tc-range { display: grid; gap: .25rem; }
+.tc-range .tc-range-top { display: flex; justify-content: space-between; align-items: baseline; }
+.tc-range output {
+  font-weight: 700; font-size: 1.15rem; color: var(--tc-accent2);
+  font-variant-numeric: tabular-nums;
+}
+.tc-range input[type="range"] {
+  width: 100%; accent-color: var(--tc-accent);
+}
+.tc-tog { display: flex; gap: .4rem; flex-wrap: wrap; }
+.tc-tog button {
+  flex: 1; min-width: 5.5rem;
+  background: var(--tc-panel2);
+  border: 1px solid var(--tc-border);
+  color: var(--tc-muted);
+  border-radius: 8px;
+  padding: .5rem .7rem;
+  font: inherit; font-size: .85rem; font-weight: 600;
+  cursor: pointer;
+}
+.tc-tog button.on {
+  background: color-mix(in srgb, var(--tc-accent) 22%, var(--tc-panel2));
+  border-color: var(--tc-accent);
+  color: var(--tc-text);
+}
+.tc-kpi {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .55rem;
+  margin-top: .85rem;
+}
+@media (min-width: 600px) { .tc-kpi { grid-template-columns: repeat(4, 1fr); } }
+.tc-kpi > div {
+  background: var(--tc-panel2);
+  border-radius: 10px;
+  padding: .65rem .7rem;
+  border: 1px solid transparent;
+}
+.tc-kpi .tc-k { font-size: .72rem; color: var(--tc-muted); text-transform: uppercase; letter-spacing: .04em; }
+.tc-kpi .tc-v { font-size: 1.15rem; font-weight: 700; margin-top: .15rem; font-variant-numeric: tabular-nums; }
+.tc-kpi .tc-v small { font-size: .7rem; font-weight: 500; color: var(--tc-muted); }
+.tc-table-wrap { overflow-x: auto; margin-top: .25rem; -webkit-overflow-scrolling: touch; }
+.tc-table {
+  width: 100%; border-collapse: collapse; font-size: .82rem;
+  font-variant-numeric: tabular-nums;
+}
+.tc-table th, .tc-table td {
+  text-align: left; padding: .45rem .5rem;
+  border-bottom: 1px solid var(--tc-border);
+  white-space: nowrap;
+}
+.tc-table th {
+  color: var(--tc-muted); font-weight: 600; font-size: .72rem;
+  text-transform: uppercase; letter-spacing: .03em;
+  position: sticky; top: 0; background: var(--tc-panel);
+}
+.tc-table tr:hover td { background: color-mix(in srgb, var(--tc-accent) 8%, transparent); }
+.tc-table .tc-num { text-align: right; }
+.tc-badge {
+  display: inline-block; padding: .12rem .4rem; border-radius: 999px;
+  font-size: .7rem; font-weight: 700;
+}
+.tc-badge.g { background: color-mix(in srgb, var(--tc-good) 25%, transparent); color: #55efc4; }
+.tc-badge.o { background: color-mix(in srgb, var(--tc-ok) 25%, transparent); color: #ffeaa7; }
+.tc-badge.b { background: color-mix(in srgb, var(--tc-bad) 25%, transparent); color: #fab1a0; }
+.tc-badge.n-A1 { background: color-mix(in srgb, var(--tc-a1) 28%, transparent); color: #ff7675; }
+.tc-badge.n-Magenta { background: color-mix(in srgb, var(--tc-magenta) 28%, transparent); color: #fd79a8; }
+.tc-badge.n-Drei { background: color-mix(in srgb, var(--tc-drei) 28%, transparent); color: #fdcb6e; }
+.tc-badge.n-Kabel { background: color-mix(in srgb, var(--tc-accent2) 28%, transparent); color: #81ecec; }
+.tc-chart { width: 100%; height: auto; display: block; margin-top: .5rem; }
+.tc-chart text { font-family: var(--tc-font); fill: var(--tc-muted); font-size: 11px; }
+.tc-chart .tc-bar-label { fill: var(--tc-text); font-size: 11px; font-weight: 600; }
+.tc-chart .tc-axis { stroke: var(--tc-border); stroke-width: 1; }
+.tc-legend { display: flex; flex-wrap: wrap; gap: .6rem 1rem; margin-top: .55rem; font-size: .75rem; color: var(--tc-muted); }
+.tc-legend i { display: inline-block; width: .7rem; height: .7rem; border-radius: 2px; margin-right: .3rem; vertical-align: -1px; }
+.tc-tabs { display: flex; gap: .35rem; flex-wrap: wrap; margin-bottom: .85rem; }
+.tc-tabs button {
+  background: var(--tc-panel2); border: 1px solid var(--tc-border);
+  color: var(--tc-muted); border-radius: 999px; padding: .4rem .85rem;
+  font: inherit; font-size: .82rem; font-weight: 600; cursor: pointer;
+}
+.tc-tabs button.on { background: var(--tc-accent); border-color: var(--tc-accent); color: #fff; }
+.tc-src {
+  margin-top: 1.25rem; padding-top: 1rem;
+  border-top: 1px solid var(--tc-border);
+  font-size: .75rem; color: var(--tc-muted);
+}
+.tc-src ul { margin: .35rem 0 0; padding-left: 1.1rem; }
+.tc-warn {
+  background: color-mix(in srgb, var(--tc-ok) 12%, var(--tc-panel));
+  border: 1px solid color-mix(in srgb, var(--tc-ok) 40%, var(--tc-border));
+  border-radius: 8px; padding: .55rem .7rem; font-size: .78rem;
+  color: #ffeaa7; margin-top: .65rem;
+}

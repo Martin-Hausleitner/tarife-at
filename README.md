@@ -1,27 +1,10 @@
-# Tarif-Vergleich Österreich
+# Tarif-Vergleich Österreich (v2)
 
-Interaktive Übersicht: Handytarife, 5G-Internet/Cube und 5G-Router in Österreich.
+Live: https://martin-hausleitner.github.io/tarife-at/
 
-**Stand der Recherche:** 12.10.2026
+- **529 Tarife** von tarife.at (260 Handy, 269 mobiles/5G-Internet, alle Datenvolumen, Jugendtarife markiert), jeweils mit Link zur tarife.at-Detailseite
+- **181 5G-Router** von geizhals.at (Kategorie Mobilfunk-Router, Filter 5G) mit Fotos, SMS-/Telefonie-Angaben und Links zu Open-Source-SMS-Tools
+- Tabelle: AG Grid Community (MIT, lokal in `assets/vendor`), Theme Quartz hell/dunkel, Spaltenfilter, Floating Filter, Mehrspalten-Sortierung, Quick-Filter, gespeicherte Spaltenansicht; am Handy Kartenansicht
+- Module: `features/calc` (Kostenrechner/P-L), `features/network` (Standort Bandgasse 13)
 
-## Nutzung
-
-Statische Seite — öffnen unter GitHub Pages oder lokal `index.html` im Browser.
-
-Filter: Netz (A1 / Magenta / Drei), Anbieter, unlimitiert, Bindung, Business, Preis, Mindest-Download.
-
-## Datenquellen
-
-- [tarife.at](https://www.tarife.at/) (Vergleichsportale)
-- Anbieterseiten: A1, Magenta, Drei, spusu, HoT, educom, yesss!, georg, up, XOXO, Red Bull MOBILE, Lidl Connect, Krone mobile u. a.
-- Router-Preise: [geizhals.at](https://geizhals.at/), Herstellerseiten, willhaben (Gebrauchtangaben)
-
-## Hinweis
-
-Preise und Konditionen **ohne Gewähr**. Tarife ändern sich; Angaben sind Recherche-Stand vom 12.10.2026. Vor Abschluss immer die aktuelle Anbieterseite prüfen. ❓ = ungeprüft.
-
-Logos und Marken gehören den jeweiligen Inhabern und dienen nur zur Kennzeichnung. Bildquellen siehe Abschnitt auf der Seite.
-
-## Technik
-
-Reine HTML/CSS/JS-Seite (`assets/data.json`). Kein Backend, keine Cookies, keine Tracking-Skripte.
+Icons: Lucide (ISC). Bilder © Hersteller/geizhals. Keine Gewähr, Preise vor Abschluss prüfen.
