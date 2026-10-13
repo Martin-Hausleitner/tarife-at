@@ -4,3 +4,6 @@
 *{@apply border-border}body{@apply bg-background text-foreground antialiased;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;font-feature-settings:"cv11","ss01"}}
 .ag-theme-host .ag-cell{display:flex;align-items:center}
 .tn-status-ok,.tn-status-partial,.tn-status-no{background:#f4f4f5!important}.tn-status-ok{color:#00684f!important}.tn-status-partial{color:#6b4f00!important}.tn-status-no{color:#9b2c12!important}
+
+/* contrast-boost-1111: stronger muted text & card borders */
+.dark .text-muted-foreground{color:rgb(212 212 216)}.dark [data-slot=card],.dark .border{border-color:rgb(113 113 122)}

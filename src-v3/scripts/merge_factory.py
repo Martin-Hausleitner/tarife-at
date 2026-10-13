@@ -3,7 +3,8 @@ Only repos listed in REPOS (gates green + hand-checked extractor); feed-in tarif
 import json, os, re
 W = '/workspace'; P = W + '/tarife-v3/src/more.json'
 REPOS = {'opencli-eety-at': 'eety.at', 'opencli-kronemobile-at': 'kronemobile.at', 'opencli-oegig-at': 'oegig.at', 'opencli-auri-at': 'auri.at', 'opencli-x-powr-at': 'x-powr.at',
-         'opencli-gutmann-cc': 'gutmann.cc', 'opencli-montana-energie-at': 'montana-energie.at', 'opencli-stadtwerke-bruck-at': 'stadtwerke-bruck.at'}
+         'opencli-gutmann-cc': 'gutmann.cc', 'opencli-montana-energie-at': 'montana-energie.at', 'opencli-stadtwerke-bruck-at': 'stadtwerke-bruck.at',
+         'opencli-stadtwerke-mz-at': 'stadtwerke-mz.at', 'opencli-wuesterstrom-at': 'wuesterstrom.at', 'opencli-esimple-at': 'esimple.at'}
 CAT = {'mobil': 'handy', 'internet': 'internet', 'strom': 'strom', 'gas': 'heizen'}
 norm = lambda s: re.sub(r'[^a-z0-9]', '', (s or '').lower())
 M = json.load(open(P)); rows = M['rows']
