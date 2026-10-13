@@ -9,3 +9,9 @@
 .dark .text-muted-foreground{color:rgb(212 212 216)}.dark [data-slot=card],.dark .border{border-color:rgb(113 113 122)}
 /* filter-chip-contrast-1610 */
 .dark .rounded-full.border{border-color:rgb(113 113 122)}
+
+/* bottom-nav-contrast-1621 */
+nav[aria-label="Navigation mobil"] span.text-muted-foreground{color:rgb(161 161 170)}
+.dark nav[aria-label="Navigation mobil"] span.text-muted-foreground{color:rgb(212 212 216)}
+nav[aria-label="Navigation mobil"] button[aria-current="page"] span,
+nav[aria-label="Navigation mobil"] button .text-muted-foreground{font-weight:700}
