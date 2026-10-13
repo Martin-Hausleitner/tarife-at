@@ -15,3 +15,8 @@ nav[aria-label="Navigation mobil"] span.text-muted-foreground{color:rgb(161 161 
 .dark nav[aria-label="Navigation mobil"] span.text-muted-foreground{color:rgb(212 212 216)}
 nav[aria-label="Navigation mobil"] button[aria-current="page"] span,
 nav[aria-label="Navigation mobil"] button .text-muted-foreground{font-weight:700}
+
+/* logo-tile-contrast-1723: pale logos stay readable on dark backgrounds */
+.dark .rounded-full.bg-white,
+.dark [class*="rounded-full"][class*="bg-white"]{background:#fff!important;box-shadow:0 0 0 1px rgb(255 255 255 / 35%),0 0 0 2px rgb(24 24 27)}
+.dark img[alt=""],.dark img[src*="logos/"]{filter:contrast(1.08)}
