@@ -34,8 +34,8 @@ export default function IpQuality({theme}){
   </div>
   <Card className="p-4"><div className="mb-2 font-semibold">IPv6-Anteil & Median-Ping je Netz</div>
    <div style={{height:320}}><ResponsiveContainer><BarChart data={chart} margin={{left:0,right:10,bottom:40}}><CartesianGrid strokeDasharray="3 3" opacity={.3}/><XAxis dataKey="name" angle={-30} textAnchor="end" interval={0} fontSize={11}/><YAxis fontSize={11}/><Tooltip/><Legend verticalAlign="top"/>
-    <Bar dataKey="IPv6-fähig %" fill="#2563eb"/><Bar dataKey="Ping Festnetz ms" fill="#16a34a"/><Bar dataKey="Ping Mobil ms" fill="#ea580c"/></BarChart></ResponsiveContainer></div></Card>
-  <div style={{height:620}}><AgGridReact theme={theme} rowData={rows} columnDefs={cols} defaultColDef={{sortable:true,filter:true,resizable:true}} rowHeight={56}/></div>
+    <Bar dataKey="IPv6-fähig %" fill="#2563eb" isAnimationActive={false}/><Bar dataKey="Ping Festnetz ms" fill="#16a34a" isAnimationActive={false}/><Bar dataKey="Ping Mobil ms" fill="#ea580c" isAnimationActive={false}/></BarChart></ResponsiveContainer></div></Card>
+  <div><AgGridReact domLayout="autoHeight" theme={theme} rowData={rows} columnDefs={cols} defaultColDef={{sortable:true,filter:true,resizable:true}} rowHeight={56}/></div>
   <Card className="p-4 text-sm space-y-2"><div className="flex items-center gap-2 font-semibold"><Info className="size-4"/>Quellen & Grenzen</div>
    <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
     <li>Adressraum, Präfixe, Nachbarn: <L h="https://stat.ripe.net/docs/data_api" c="RIPEstat API"/> (routing-status, asn-neighbours), Stand {Q.stand}; Details je AS auf <L h="https://bgp.he.net/AS8447" c="bgp.he.net"/> und <L h="https://www.peeringdb.com/asn/8447" c="PeeringDB"/>.</li>
