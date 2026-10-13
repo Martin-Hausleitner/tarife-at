@@ -1,0 +1,352 @@
+{
+"stand": "13.10.2026",
+"rows": [
+{
+"asn": 8447,
+"name": "A1 Telekom Austria",
+"type": "Mobil + Festnetz",
+"mvno": "yesss!, georg, XOXO, Red Bull MOBILE, bob",
+"holder": "A1TELEKOM-AT A1 Telekom Austria AG",
+"v4ips": 2784768,
+"v4pfx": 125,
+"v6pfx": 9,
+"neigh": 447,
+"users": 2621554,
+"v6cap": 61.93,
+"v6pref": 60.99,
+"drop": false,
+"pingFix": 15.5,
+"nFix": 214927,
+"downFix": 89,
+"pingMob": 22.7,
+"nMob": 23298,
+"downMob": 95,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Feistritz im Rosental": 1,
+"Vienna": 1,
+"Klagenfurt": 1,
+"Linz": 1,
+"Hartberg": 1
+},
+"nat": "Mobil privat: öffentliche IPv4 auf Anfrage (RTR); Business: A1 Mobile Static IP",
+"static": "A1 Mobile Static IP 4,90 €/M (+1 IP 4 €, +5 IP 10 €); Business Cube inkl.",
+"src": "https://www.a1.net/business/internet-telefonanlagen/mobiles-internet/mobile-static-ip"
+},
+{
+"asn": 8412,
+"name": "Magenta Telekom",
+"type": "Mobil + Kabel",
+"mvno": "HoT",
+"holder": "TMA T-Mobile Austria GmbH",
+"v4ips": 1555200,
+"v4pfx": 124,
+"v6pfx": 41,
+"neigh": 110,
+"users": 2278104,
+"v6cap": 73.74,
+"v6pref": 72.73,
+"drop": false,
+"pingFix": 17.7,
+"nFix": 116607,
+"downFix": 131,
+"pingMob": 24.0,
+"nMob": 16701,
+"downMob": 122,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Vienna": 3,
+"Strass im Zillertal": 2
+},
+"nat": "Mobil: öffentl. dynamische IPv4 per APN business.gprsinternet (Forum); Business Cable 1 fixe IP inkl.",
+"static": "Corporate Mobile /29 8 €, /28 16 €; Cable-Subnetze auf Angebot",
+"src": "https://www.magenta.at/content/dam/magenta_at/pdfs/business/eblb/eblb-corporate-mobile-jaenner-2024.pdf"
+},
+{
+"asn": 25255,
+"name": "Drei (Mobil)",
+"type": "Mobil",
+"mvno": "educom, Lidl Connect, spusu (eigenes AS)",
+"holder": "H3G-Austria-AS Hutchison Drei Austria GmbH",
+"v4ips": 731392,
+"v4pfx": 47,
+"v6pfx": 5,
+"neigh": 51,
+"users": 1120338,
+"v6cap": 0.85,
+"v6pref": 0.41,
+"drop": false,
+"pingFix": 25.1,
+"nFix": 72580,
+"downFix": 87,
+"pingMob": 20.7,
+"nMob": 51054,
+"downMob": 115,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Vienna": 5
+},
+"nat": "„Open Internet“ in Kundenzone = öffentliche dynamische IPv4 gratis",
+"static": "statisch: kein offizieller Preis (Forum: privat 4 €)",
+"src": "https://www.techstream.at/drei-oeffentliche-ip-adresse-erhalten/"
+},
+{
+"asn": 8437,
+"name": "Drei (Festnetz, ex UTA/Tele2)",
+"type": "Festnetz",
+"mvno": "–",
+"holder": "UTA-AS Hutchison Drei Austria GmbH",
+"v4ips": 550656,
+"v4pfx": 80,
+"v6pfx": 43,
+"neigh": 57,
+"users": null,
+"v6cap": 1.0,
+"v6pref": 0.06,
+"drop": false,
+"pingFix": 11.0,
+"nFix": 7683,
+"downFix": 72,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Vienna": 5
+},
+"nat": "DataNet/Hybrid Business: 1 statische IPv4 am WAN",
+"static": "3,33 €/M, keine Subnetze",
+"src": "https://www.drei.at/media/common/pdf/tarife/entgeltbestimmungen-festnetz-datanet200-business.pdf"
+},
+{
+"asn": 51265,
+"name": "spusu (Mass Response)",
+"type": "Mobil (Drei-Netz)+Festnetz",
+"mvno": "–",
+"holder": "MASSRESPONSE-AS Mass Response Service GmbH",
+"v4ips": 52992,
+"v4pfx": 27,
+"v6pfx": 3,
+"neigh": 92,
+"users": 235739,
+"v6cap": 28.6,
+"v6pref": 28.1,
+"drop": false,
+"pingFix": 20.0,
+"nFix": 20973,
+"downFix": 69,
+"pingMob": 22.1,
+"nMob": 7351,
+"downMob": 91,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Vienna": 5
+},
+"nat": "statische IPv4 beantragbar",
+"static": "7 €/M (Such-Snippet spusu.at)",
+"src": "https://www.techstream.at/spusu-oeffentliche-ip-adresse-aktivieren/"
+},
+{
+"asn": 29287,
+"name": "Wien Energie (SuperSchnell/blizznet)",
+"type": "Glasfaser",
+"mvno": "–",
+"holder": "AT-WZN-AS Wien Energie GmbH",
+"v4ips": 12032,
+"v4pfx": 6,
+"v6pfx": 2,
+"neigh": 31,
+"users": null,
+"v6cap": 1.5,
+"v6pref": 0.11,
+"drop": false,
+"pingFix": 1.4,
+"nFix": 4820,
+"downFix": 115,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Vienna": 5
+},
+"nat": "privat ohne Option CGNAT (Forum); IPv6 /56",
+"static": "statische IPv4 2,90 €/M inkl. MwSt.; blizznet Business: statische IPs inkl.",
+"src": "https://dokumente.wienenergie.at/wp-content/uploads/EBLB-SuperSchnell-Internet-2.pdf"
+},
+{
+"asn": 12605,
+"name": "LIWEST",
+"type": "Kabel",
+"mvno": "–",
+"holder": "LIWEST-AT LIWEST Kabelmedien GmbH",
+"v4ips": 189440,
+"v4pfx": 9,
+"v6pfx": 1,
+"neigh": 105,
+"users": 266519,
+"v6cap": 1.44,
+"v6pref": 0.13,
+"drop": false,
+"pingFix": 15.1,
+"nFix": 9145,
+"downFix": 154,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Linz": 2,
+"Vöcklabruck": 2,
+"Steyr": 1
+},
+"nat": "nur öffentliche IPv4, kein CGNAT/DS-Lite; kein IPv6 (FAQ)",
+"static": "–",
+"src": "https://www.liwest.at/service-hilfe/haeufige-fragen/internet"
+},
+{
+"asn": 8339,
+"name": "kabelplus",
+"type": "Kabel/FTTH",
+"mvno": "–",
+"holder": "KABSI-AS kabelplus GmbH",
+"v4ips": 242688,
+"v4pfx": 27,
+"v6pfx": 3,
+"neigh": 114,
+"users": 275365,
+"v6cap": 1.48,
+"v6pref": 0.09,
+"drop": false,
+"pingFix": 12.1,
+"nFix": 16619,
+"downFix": 153,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Krustetten": 1,
+"Sankt Pölten": 1,
+"Schwechat": 1,
+"Neusiedl am See": 2
+},
+"nat": "1 dynamische öffentliche IP-Adresse (EB 01/2026)",
+"static": "–",
+"src": "https://www.kabelplus.at/kabelplus/media/Drucksorten/Entgelt-Leistungsbeschreibung_2026-01.pdf"
+},
+{
+"asn": 8445,
+"name": "Salzburg AG (CableLink)",
+"type": "Kabel/FTTH",
+"mvno": "–",
+"holder": "SALZBURG-AG-AS SALZBURG AG fur Energie, Verkehr und Telekommunikation",
+"v4ips": 249600,
+"v4pfx": 36,
+"v6pfx": 3,
+"neigh": 120,
+"users": 224011,
+"v6cap": 1.99,
+"v6pref": 0.11,
+"drop": false,
+"pingFix": 15.8,
+"nFix": 9291,
+"downFix": 292,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Salzburg": 4,
+"Bischofshofen": 1
+},
+"nat": "1 dynamische offizielle IP-Adresse (Produktblatt)",
+"static": "–",
+"src": "https://www.salzburg-ag.at/content/dam/web18/dokumente/cablelink/internet/produktblaetter-ab-2026/Produktblatt_CableLink_Fiber.pdf"
+},
+{
+"asn": 48943,
+"name": "kapper.net",
+"type": "Business SDSL/VDSL/Glasfaser",
+"mvno": "–",
+"holder": "KAPPERNET KAPPER NETWORK-COMMUNICATIONS GmbH",
+"v4ips": 14080,
+"v4pfx": 15,
+"v6pfx": 2,
+"neigh": 36,
+"users": null,
+"v6cap": 59.11,
+"v6pref": 57.14,
+"drop": false,
+"pingFix": 10.3,
+"nFix": 316,
+"downFix": 57,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 5
+},
+"geoCities": {
+"Krems": 1,
+"Vienna": 4
+},
+"nat": "statische IPv4/IPv6, eigene Netze",
+"static": "auf Angebot",
+"src": "https://kapper.net/internet-vernetzung/internet-access/"
+},
+{
+"asn": 51184,
+"name": "fonira",
+"type": "DSL/Glasfaser/Funk",
+"mvno": "–",
+"holder": "FONIRA Fonira Telekom GmbH",
+"v4ips": 13824,
+"v4pfx": 10,
+"v6pfx": 5,
+"neigh": 1508,
+"users": null,
+"v6cap": 82.37,
+"v6pref": 81.8,
+"drop": false,
+"pingFix": 10.0,
+"nFix": 5497,
+"downFix": 94,
+"pingMob": null,
+"nMob": null,
+"downMob": null,
+"geo": {
+"Austria": 4,
+"Romania": 1
+},
+"geoCities": {
+"Vienna": 1,
+"Mattighofen": 1,
+"Bucharest": 1,
+"Bad Hall": 1,
+"Langenzersdorf": 1
+},
+"nat": "1 statische IPv4 + IPv6 /60 buchbar",
+"static": "4,80 €/M; Business-AddOn 13,33 €",
+"src": "https://fonira.at/produkte/internet/"
+}
+]
+}
