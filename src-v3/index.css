@@ -7,3 +7,5 @@
 
 /* contrast-boost-1111: stronger muted text & card borders */
 .dark .text-muted-foreground{color:rgb(212 212 216)}.dark [data-slot=card],.dark .border{border-color:rgb(113 113 122)}
+/* filter-chip-contrast-1610 */
+.dark .rounded-full.border{border-color:rgb(113 113 122)}
