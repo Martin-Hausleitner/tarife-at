@@ -7,9 +7,10 @@ const B=import.meta.env.BASE_URL;
 const norm=s=>(s||'').toLowerCase().replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/[^a-z0-9]/g,'');
 export const logoFor=(name,dom)=>{const d=dom||M.name2dom[norm(name)]||Object.entries(M.name2dom).find(([k])=>k.length>3&&norm(name).startsWith(k))?.[1];return d?M.logos[d]:null};
 const initials=n=>(n||'?').replace(/[^A-Za-z0-9ÄÖÜäöü ]/g,'').split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
-export function PLogo({name,dom,src,size='size-9'}){const L=logoFor(name,dom);const s=src||L?.f;const c=L?.c;
- return <div className={cn('grid shrink-0 place-items-center overflow-hidden rounded-lg border-2 bg-white p-1',size)} style={c?{borderColor:c}:undefined} title={name}>
-  {s?<img loading="lazy" src={B+s} alt={name||''} className="max-h-full max-w-full object-contain"/>:<span className="text-xs font-bold text-zinc-700">{initials(name)}</span>}</div>}
+export function PLogo({name,dom,src,size='size-9'}){const L=logoFor(name,dom);const s=src||L?.f;const c=L?.c;const [bad,setBad]=useState(null);
+ const fb=!s||bad===s;const hue=[...(name||'?')].reduce((a,ch)=>(a*31+ch.charCodeAt(0))%360,7);
+ return <div className={cn('grid shrink-0 place-items-center overflow-hidden rounded-lg border-2 p-1',fb?'shadow-inner':'bg-white',size)} style={fb?{background:c||`hsl(${hue} 62% 36%)`,borderColor:c||`hsl(${hue} 62% 28%)`}:c?{borderColor:c}:undefined} title={name}>
+  {fb?<span aria-label={name} className="text-xs font-extrabold tracking-wide text-white drop-shadow-sm">{initials(name)}</span>:<img loading="lazy" src={B+s} alt={name||''} onError={()=>setBad(s)} className="max-h-full max-w-full object-contain"/>}</div>}
 export const rows=M.rows;
 export const CATS={handy:['Handy',Smartphone],internet:['Internet',Wifi],strom:['Strom',Zap],business:['Business',Building2],heizen:['Heizen / Pellets / Gas',Flame]};
 const eur=v=>v==null?'–':v.toLocaleString('de-AT',{style:'currency',currency:'EUR'});
