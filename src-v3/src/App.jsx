@@ -2,6 +2,7 @@ import React,{useEffect,useMemo,useRef,useState,useCallback} from 'react';
 import {AgGridReact} from 'ag-grid-react';import {AllCommunityModule,ModuleRegistry,themeQuartz,colorSchemeDark} from 'ag-grid-community';
 import {Smartphone,Wifi,Router,Calculator,MapPin,Moon,Sun,Search,Columns3,LayoutGrid,Table2,Infinity as Inf,Zap,LockOpen,CreditCard,GraduationCap,X,MessageSquare,Phone,Image as Img,Euro,ExternalLink,Check,Minus,Scale,Signal,Command as Cmd,Rows3,Trophy} from 'lucide-react';
 import {cn,Button,Badge,Card,Input,Tabs,TabsList,TabsTrigger,Switch,Sheet,Dialog,Command,CommandInput,CommandList,CommandEmpty,CommandGroup,CommandItem,DropdownMenu,DropdownMenuTrigger,DropdownMenuContent,DropdownMenuLabel,DropdownMenuSeparator,DropdownMenuCheckboxItem} from './components/ui.jsx';
+import OpenWrtTab from './OpenWrt.jsx';import StromTab from './Strom.jsx';import {PlugZap as StromIcon} from 'lucide-react';import {Cpu as OwIcon} from 'lucide-react';
 ModuleRegistry.registerModules([AllCommunityModule]);
 const D=window.DATA,B=import.meta.env.BASE_URL,A=p=>p?B+p:p;
 for(const svc of ['mobile','data']){const L=D.tarife.filter(t=>t.svc===svc);L.forEach(t=>{if(!t.dataGB||t.effective<3){t._raw=null;return}const dp=t.dataGB===-1?300:Math.min(t.dataGB,200)*1.5;t._raw=(Math.min(t.down,1000)+4*t.up+dp)/Math.max(t.effective,1)});
@@ -91,8 +92,10 @@ export default function App(){
   <div className="grid grid-cols-2 gap-3 lg:grid-cols-4"><Stat icon={Smartphone} label="Handytarife" value={nMob} hint="von tarife.at"/><Stat icon={Wifi} label="Mobiles Internet / 5G" value={nDat} hint="Cubes, Router-SIMs, Datentarife"/><Stat icon={Router} label="5G-Router" value={D.router.length} hint="Geizhals, mit Fotos"/><Stat icon={Inf} label="Unlimitiert ab" value={eur(cheapUnl)} hint="effektiv pro Monat"/></div>
   <Tabs value={tab} onValueChange={setTab}><div className="overflow-x-auto pb-1"><TabsList>
    <TabsTrigger value="mobile"><Smartphone/>Handy<Badge variant="secondary" className="ml-1">{nMob}</Badge></TabsTrigger><TabsTrigger value="data"><Wifi/>Internet/5G<Badge variant="secondary" className="ml-1">{nDat}</Badge></TabsTrigger>
-   <TabsTrigger value="router"><Router/>Router<Badge variant="secondary" className="ml-1">{D.router.length}</Badge></TabsTrigger><TabsTrigger value="calc"><Calculator/>Rechner</TabsTrigger><TabsTrigger value="net"><MapPin/>Standort</TabsTrigger></TabsList></div></Tabs>
-  {!isGrid&&<Ext2 key={tab} mod={tab}/>}
+   <TabsTrigger value="router"><Router/>Router<Badge variant="secondary" className="ml-1">{D.router.length}</Badge></TabsTrigger><TabsTrigger value="openwrt"><OwIcon/>OpenWrt<Badge variant="secondary" className="ml-1">26</Badge></TabsTrigger><TabsTrigger value="strom" data-testid="tab-strom"><StromIcon/>Strom</TabsTrigger><TabsTrigger value="calc"><Calculator/>Rechner</TabsTrigger><TabsTrigger value="net"><MapPin/>Standort</TabsTrigger></TabsList></div></Tabs>
+  {tab==='openwrt'&&<OpenWrtTab theme={dark2?dark:light}/>}
+  {tab==='strom'&&<StromTab theme={dark2?dark:light}/>}
+  {!isGrid&&tab!=='openwrt'&&tab!=='strom'&&<Ext2 key={tab} mod={tab}/>}
   {isGrid&&<>
   <Card className="p-3"><div className="flex flex-wrap items-center gap-2">
    <div className="relative w-full sm:w-64"><Search className="absolute left-2.5 top-2.5 size-4 text-muted-foreground"/><Input value={q} onChange={e=>setQ(e.target.value)} placeholder="Filtern…" className="pl-8"/></div>
@@ -121,7 +124,7 @@ export default function App(){
  <Sheet open={!!det} onOpenChange={o=>!o&&setDet(null)} title={det?(det.tariff||det.name):''} desc={det?(det.provider?`${det.provider} · Netz ${det.network}`:`${det.maker} · Geizhals`):''}>{det&&<Detail r={det} onCmp={()=>toggleCmp(det)} sel={cmp.some(x=>x._id===det._id)}/>}</Sheet>
  <Sheet side="bottom" open={cmpOpen} onOpenChange={setCmpOpen} title="Vergleich" desc="Bis zu 3 Einträge nebeneinander">{cmpOpen&&<Compare items={cmp} isR={isR}/>}</Sheet>
  <Dialog open={k} onOpenChange={setK} title="Suche"><Command loop><CommandInput placeholder="Tarif, Anbieter, Router oder Befehl…"/><CommandList><CommandEmpty>Nichts gefunden.</CommandEmpty>
-  <CommandGroup heading="Navigation">{[['mobile','Handytarife',Smartphone],['data','Internet / 5G',Wifi],['router','5G-Router',Router],['calc','Rechner',Calculator],['net','Standort Bandgasse 13',MapPin]].map(([v,l,I])=><CommandItem key={v} onSelect={()=>{setTab(v);setK(false)}}><I/>{l}</CommandItem>)}
+  <CommandGroup heading="Navigation">{[['mobile','Handytarife',Smartphone],['data','Internet / 5G',Wifi],['router','5G-Router',Router],['openwrt','OpenWrt-Router (SIM)',OwIcon],['calc','Rechner',Calculator],['strom','Strom',Zap],['net','Standort Bandgasse 13',MapPin]].map(([v,l,I])=><CommandItem key={v} onSelect={()=>{setTab(v);setK(false)}}><I/>{l}</CommandItem>)}
    <CommandItem onSelect={()=>{setDark(!dark2);setK(false)}}>{dark2?<Sun/>:<Moon/>}Design umschalten</CommandItem></CommandGroup>
   <CommandGroup heading="Tarife">{D.tarife.map(t=><CommandItem key={t._id} value={`${t.provider} ${t.tariff} ${t._id}`} onSelect={()=>{setK(false);setDet(t)}}><img src={A(t.providerLogo)} className="size-5 rounded bg-white object-contain p-0.5" alt=""/><span className="truncate">{t.provider} · {t.tariff}</span><span className="ml-auto text-xs text-muted-foreground tabular-nums">{eur(t.effective)}</span></CommandItem>)}</CommandGroup>
   <CommandGroup heading="Router">{D.router.map(r=><CommandItem key={r._id} value={`${r.name} ${r._id}`} onSelect={()=>{setK(false);setDet(r)}}><Router/><span className="truncate">{r.name}</span><span className="ml-auto text-xs text-muted-foreground">{eur(r.price)}</span></CommandItem>)}</CommandGroup>
