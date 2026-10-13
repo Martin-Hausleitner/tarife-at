@@ -20,3 +20,9 @@ nav[aria-label="Navigation mobil"] button .text-muted-foreground{font-weight:700
 .dark .rounded-full.bg-white,
 .dark [class*="rounded-full"][class*="bg-white"]{background:#fff!important;box-shadow:0 0 0 1px rgb(255 255 255 / 35%),0 0 0 2px rgb(24 24 27)}
 .dark img[alt=""],.dark img[src*="logos/"]{filter:contrast(1.08)}
+
+/* row-hover-contrast-1822 */
+.ag-theme-host .ag-row-hover{background:rgb(244 244 245)!important}
+.dark .ag-theme-host .ag-row-hover{background:rgb(39 39 42)!important}
+.ag-theme-host .ag-row-focus,.ag-theme-host .ag-cell-focus{outline:2px solid rgb(59 130 246)!important;outline-offset:-2px}
+button:focus-visible,a:focus-visible,[role=tab]:focus-visible{outline:2px solid rgb(59 130 246);outline-offset:2px}
