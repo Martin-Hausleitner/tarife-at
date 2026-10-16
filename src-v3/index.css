@@ -31,3 +31,7 @@ button:focus-visible,a:focus-visible,[role=tab]:focus-visible{outline:2px solid 
 .sticky.z-20[class*="p-3"]{backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);background:hsl(var(--card)/0.92)!important;box-shadow:0 1px 0 hsl(var(--border)),0 8px 24px rgb(0 0 0 / 6%)}
 .dark .sticky.z-20[class*="p-3"]{background:hsl(var(--card)/0.88)!important;box-shadow:0 1px 0 hsl(var(--border)),0 8px 28px rgb(0 0 0 / 45%)}
 button.rounded-full[class*="bg-primary"],button.rounded-full.bg-primary{box-shadow:0 0 0 2px hsl(var(--background)),0 0 0 4px hsl(var(--primary)/0.55)}
+
+/* focus-ring-contrast-1810: gut sichtbarer Tastatur-Fokus (WCAG 2.4.7/2.4.11) für Links, Buttons, Tabs und Grid-Zellen */
+a:focus-visible,button:focus-visible,[role=tab]:focus-visible,input:focus-visible,select:focus-visible,.ag-cell-focus{outline:3px solid #2563eb!important;outline-offset:2px}
+.dark a:focus-visible,.dark button:focus-visible,.dark [role=tab]:focus-visible,.dark input:focus-visible,.dark select:focus-visible,.dark .ag-cell-focus{outline-color:#facc15!important}
